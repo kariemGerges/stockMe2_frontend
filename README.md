@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+# Stock Price Prediction Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend of the Stock Price Prediction web application. It is built using **React** and styled with **Tailwind CSS**. The application allows users to select stocks and view predicted prices for the next 3 to 4 days, helping investors make informed decisions.
 
-## Available Scripts
+## Table of Contents
 
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Available Scripts](#available-scripts)
+- [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
+## Overview
+
+The frontend application provides an intuitive interface for users to:
+
+- Search and select stock symbols.
+- View historical stock data through interactive charts.
+- Request and display predicted stock prices for the next 3-4 days.
+- Visualize both historical and predicted data for comparison.
+
+---
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js** (version 12 or higher) and **npm** installed on your machine.
+- Basic understanding of React and Tailwind CSS.
+- The backend server should be running to handle API requests (see backend README for setup instructions).
+
+---
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/stock-price-prediction-frontend.git
+   cd stock-price-prediction-frontend
+
+
+Install dependencies:
+
+bash
+Copy code
+npm install
+This command installs all the necessary packages required for the project.
+
+Project Structure
+arduino
+Copy code
+stock-price-prediction-frontend/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   ├── StockSelection.js
+│   │   ├── Dashboard.js
+│   │   └── Chart.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   └── About.js
+│   ├── styles/
+│   │   └── index.css
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+└── README.md
+public/: Contains the HTML template and favicon.
+src/: Contains the React application source code.
+components/: Reusable React components.
+pages/: Page components for different routes.
+styles/: Global and component-specific styles.
+tailwind.config.js: Tailwind CSS configuration file.
+postcss.config.js: PostCSS configuration file.
+Available Scripts
 In the project directory, you can run:
 
-### `npm start`
+npm start
+Runs the app in development mode.
+Open http://localhost:3000 to view it in your browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The page will reload if you make edits.
+You will also see any lint errors in the console.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
+npm run build
+Builds the app for production to the build folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run lint
+Runs ESLint to analyze code for potential errors and code style issues.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm run format
+Formats the code using Prettier according to the defined style guidelines.
 
-### `npm run eject`
+Environment Variables
+Create a .env file in the root of your project to define environment variables.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Example:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+arduino
+Copy code
+REACT_APP_BACKEND_URL=http://localhost:5000
+REACT_APP_BACKEND_URL: The URL of the backend server API.
+Note: Environment variables prefixed with REACT_APP_ are available in the React app via process.env.REACT_APP_VARIABLE_NAME.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Usage
+Start the Backend Server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ensure that the backend server is running and accessible at the URL specified in REACT_APP_BACKEND_URL.
 
-## Learn More
+Run the Frontend Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy code
+npm start
+Access the Application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open http://localhost:3000 in your web browser.
 
-### Code Splitting
+Using the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Select a Stock:
+Use the stock selection panel to search and select a stock symbol.
+View Historical Data:
+The app fetches and displays historical data for the selected stock.
+Get Predictions:
+Click on the "Predict" button to fetch predicted stock prices for the next 3-4 days.
+Visualize Data:
+View the historical and predicted data on interactive charts.
+Technologies Used
+React: JavaScript library for building user interfaces.
+Tailwind CSS: Utility-first CSS framework for rapid UI development.
+Axios: Promise-based HTTP client for the browser and Node.js.
+Chart.js: Simple yet flexible JavaScript charting library.
+React Router: Declarative routing for React applications.
+ESLint: Pluggable linting utility for JavaScript and JSX.
+Prettier: Opinionated code formatter.
+PostCSS: Tool for transforming CSS with JavaScript plugins.
+Contributing
+Contributions are welcome! Please follow these steps:
 
-### Analyzing the Bundle Size
+Fork the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Click the "Fork" button at the top right of the repository page.
 
-### Making a Progressive Web App
+Create a Feature Branch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+bash
+Copy code
+git checkout -b feature/YourFeature
+Commit Your Changes
 
-### Advanced Configuration
+bash
+Copy code
+git commit -m 'Add YourFeature'
+Push to the Branch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+bash
+Copy code
+git push origin feature/YourFeature
+Open a Pull Request
 
-### Deployment
+Go to your forked repository, click on the "Pull Requests" tab, and open a new pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Please ensure your code adheres to the project's coding standards and passes all tests.
 
-### `npm run build` fails to minify
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contact
+Your Name
+Email: your.email@example.com
+GitHub: yourusername
+yaml
+Copy code

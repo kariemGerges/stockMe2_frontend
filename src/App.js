@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
+// import components
+import Header from './components/Header';
+import Footer from './components/Footer';
+import PrivcyTerms from './components/PrivacyTerms';
+
+// import pages
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import Portfolio from './pages/Portfolio';
+import AboutUs from './pages/AboutUs';
+import MarketInsights from './pages/MarketInsights';
+import ErrLanding from './pages/ErrLanding';
+import Predictions from './pages/Predictions';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/insights" element={<MarketInsights />} />
+        <Route path="/PrivacyAndTerms" element={<PrivcyTerms />} />
+      <Route path="/prediction" element={<Predictions />} />
+              {/* catch all other routes */}
+              <Route path='/ErrLanding' element={<ErrLanding />} />
+            <Route path="*" element={<ErrLanding />} />
+        </Routes>
+      <Footer />
+    </Router>
   );
 }
 
